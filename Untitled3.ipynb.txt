@@ -1,0 +1,84 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# **Shek** **downloader**"
+      ],
+      "metadata": {
+        "id": "e8uZAvqmadNb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SIW7LSqijUYH",
+        "outputId": "56611d6b-2f92-4a1a-f7cc-d0fe79776a59"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/gdrive\n"
+          ]
+        }
+      ],
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/gdrive')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8vc9-B0CjqPO"
+      },
+      "outputs": [],
+      "source": [
+        "# @markdown <center><h3>Entrez votre lien et le nom du fichier </h3></center><br>\n",
+        "import requests\n",
+        "a = \"https://a-3.1fichier.com/c113660461\" # @param {type:\"string\"}\n",
+        "aa = requests.get(a, stream= True)\n",
+        "aaa = \"/content/gdrive/My Drive/\"\n",
+        "aaaa = \"Fast.and.Furious.Spy.Racers.S06E02.FRENCH.720p.WEB.x264-Wawacity.work.mkv\" # @param {type:\"string\"}\n",
+        "aaaaa = aaa + aaaa\n",
+        "with open(aaaaa, 'wb') as b:\n",
+        "    for bb in aa.iter_content(chunk_size = 1024):         \n",
+        "        if bb: \n",
+        "            b.write(bb)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "JDGP-qQf_JOv"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Untitled3.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
